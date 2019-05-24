@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: vpsoft-vpplat
+  profiles: dev
+  messages:
+    basename: message
+    encoding: UTF-8
+server:
+  context-path: /vpplatprovider
+vpcloud:
+  server:
+    vpflow: vpflowprovider
+  environment: dev
+  log:
+    operToConsole: true
+  mybatis:
+    mybatisMapperLocation: mybatis/mapper/*/*/*.xml
+    loadedMapperXml: true
+    logToConsole: true
+    typeAliasesPackage: com.vpsoft.provider.*.*.entity
+    basePackage: com.vpsoft.provider.*.*.mapper
+  multipart:
+    enable: true
+  ueditor:
+    baseDir: C:/vpsoft/upload
+    dirRule: yyyy/MM/dd
+    imageUrlPrefix: http://127.0.0.1:8080/upload
+  fileStore:
+    localStore: true
+  datapool:
+    password: sa
+    driverClassName: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@192.168.2.6:1521:orcl
+    username: valm_710
+  gateway: http://127.0.0.1:8080/vpgatway
+  home: C:/vpsoft
